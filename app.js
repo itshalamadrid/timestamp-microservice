@@ -1,7 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
-const port = 3000;
+const port = process.env.PORT || 3000;;
 const querystring = require('querystring');
 var app = module.exports = express();
 app.use(bodyParser.json());
@@ -53,7 +53,7 @@ app.get('/api/timestamp/:datestring', (req, res) => {
 
 })
 
-var serv = app.listen(3000, 'localhost', () => {
+var serv = app.listen(port, () => {
     console.log('listening');
 });
 
